@@ -1,0 +1,54 @@
+[a.jsp]
+div id =header
+1.로그인과 관련된 기능
+2.( session.getAttribute("mid") == null )
+→ 로그인이 안되어있다면
+<form action="d.jsp">
+1.d.jsp로 값을 넘겨주는 폼
+2.아이디를 입력받는다.
+3.로그인 기능이다.
+
+로그인이 되어있다면
+000님 안녕하세요 | 로그아웃(하이퍼링크) → e.jsp
+
+id VS class
+아이디는 유일한 값
+클래스는 여러개 겹치는거
+<hr>
+<div id="content">
+<form action="b.jsp"> → b로 넘어가는 폼
+
+selectAll :여러개 read  → 배열 리스트에 담아서
+for each를 사용해서 출력
+<option>
+넘어가는것은 실제 value값인데 PK를 담아서 넘김
+==================================================
+d.jsp
+
+스크립트는 string 값으로 값을 넘겨준다
+request.getParameter → 사용자가 넘겨준 아이디를 가져온다.
+
+========================================
+장바구니 추가 누르면 → 현재 선택된 option값을 b.jsp
+
+<jsp:useBean id="pDAO" class="test.ProductDAO" />
+<jsp:useBean id="pVO" class="test.ProductVO" />
+
+==================================\
+<jsp:setProperty property="*" name="pVO" />
+자동으로 setter를 사용한다.
+사용자로부터 넘어온 값을 세팅해주는 역할
+사용자가 넘기는 폼의 name을 보고 세팅을 해준다
+VO에 name에 적혀있는 것과 같은 것이 있으면
+알아서 세팅해준다.
+value에 들어있는 값을 넘겨줌 (이놈이 진짜)
+사용자가 넘겨주는 태그의 이름을 확인해야한다.
+→그 이름과 같은 VO의 멤버변수가 세팅되기 때문에
+→근데 뭐로 세팅이되는가?
+→이번에는 option 태그에서 값을 넘겨받는데
+→스크립트는 객체를 넘길수 없습니다.(스트링)
+→v는 객체이기 때문에 따로 num을 빼줄 필요가있다
+→value에다가 num을 넣어서 보낸다.
+===========================
+e.jsp
+세션에 저장되어있는 아이디 값을 가져온다
