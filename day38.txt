@@ -26,7 +26,7 @@ return;
 
 ★   <input type="hidden" name="action" value="login"> - 자주 쓰이는 틀
 
-
+/// 추가 
 form 써야되니까 이름을 붙여둠 name="test"라고
 
 
